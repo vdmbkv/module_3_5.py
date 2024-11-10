@@ -1,0 +1,18 @@
+# Рекурсивное умножение цифр
+
+def get_multiplied_digits(number):
+    str_number = str(number)
+    first = int(str_number[0])
+    length = len(str_number)
+
+    while length > 1:
+        next_nums = int(str_number[1:])
+        if length > 1:
+            return first * get_multiplied_digits(int(str_number[1:]))
+        else:
+            first *= next_nums
+
+    return first
+
+result = get_multiplied_digits(30305)
+print(result)
